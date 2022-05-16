@@ -1,0 +1,46 @@
+﻿@page "/"
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime
+
+@if (suppliers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h3> Supplier list</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address 1</th>
+                <th>Address 2</th>
+                <th>City</th>
+                <th>Postal Code</th>
+                <th>State</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var supplier in suppliers)
+            {
+                <tr>
+                    <td>@supplier.Name</td>
+                    <td>@supplier.AddressLine1</td>
+                    <td>@supplier.AddressLine2</td>
+                    <td>@supplier.City</td>
+                    <td>@supplier.PostalCode</td>
+                    <td>@supplier.States.Name </td>
+                    <td>
+                        <div>
+                            <button class="btn btn-outline-info" @onclick="()=>UpdateSupplier(supplier.Id)"  >  <span class="oi oi-pencil" aria-hidden="true"></span> </button>
+                            <button class="btn btn-outline-danger" @onclick="()=>DeleteSupplier(supplier.Id)">  <span class="oi oi-trash" aria-hidden="true"></span> </button>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
