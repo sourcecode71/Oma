@@ -11,8 +11,8 @@ We've gone to great lengths to adhere to the **Blazor** community styleguides & 
 
 # Project Setup
 
-> Set Database connection 
-> Run the project 
-> Initial will create
-> Go to src\Oma.Data.Repository\InitData and take the query from States.txt
-> Run the query 
+1. Set Database connection 
+2. Run the project 
+3. Initial will create
+4. Go to src\Oma.Data.Repository\InitData and take the query from States.txt
+5. Run the query 
